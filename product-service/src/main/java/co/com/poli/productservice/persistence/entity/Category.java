@@ -7,7 +7,6 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

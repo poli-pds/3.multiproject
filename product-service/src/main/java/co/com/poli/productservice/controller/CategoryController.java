@@ -1,5 +1,7 @@
 package co.com.poli.productservice.controller;
 
+import co.com.poli.productservice.helpers.Response;
+import co.com.poli.productservice.helpers.ResponseBuild;
 import co.com.poli.productservice.persistence.entity.Category;
 import co.com.poli.productservice.service.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -14,11 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class CategoryController {
 
     private final CategoryService categoryService;
+    private final ResponseBuild build;
 
     @PostMapping
-    public Category save(@RequestBody Category category){
+    public Response save(@RequestBody Category category) {
         categoryService.save(category);
-        return category;
+        return build.success(category);
     }
 
 }

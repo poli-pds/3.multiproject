@@ -28,11 +28,13 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Category> findAll() {
         return repository.findAll();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Category findById(Long id) {
         return repository.getById(id);
     }
